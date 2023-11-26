@@ -7,6 +7,7 @@
 #include "Operations.h"
 #include "Graphe.h"
 #include "Precedences.h"
+#include "Temps_de_cycle.h"
 
 int main() {
 

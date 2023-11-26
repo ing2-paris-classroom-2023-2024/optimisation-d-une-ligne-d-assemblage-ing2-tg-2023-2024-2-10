@@ -2,10 +2,12 @@
 // Created by mrtnw on 26/11/2023.
 //
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "Temps_de_cycle.h"
-#DEFINE MAX_TEMPS = 100
+#DEFINE MAX_TEMPS 100
 
-t_operation* lirefichier_tmps(){
+t_temps_cycle * lirefichier_tmps(){
 
     FILE* fichier = fopen("temps_cycle.txt", "r");
     if (!fichier)
