@@ -12,6 +12,7 @@ typedef struct temps{
     int temps;
 }t_temps_cycle;
 
+
 t_temps_cycle * lirefichier_tmps();
 void afficher_tmps(t_temps_cycle * temps_cycle, int num){
 
