@@ -26,6 +26,7 @@ t_temps_cycle * lirefichier_tmps(){
     return temps_cycle;
 }
 
+
 void afficher_tmps(t_temps_cycle * temps_cycle, int num){
     for (int i = 0; i<num ; i++){
         printf("Le temps globale des opérations est : %d", temps_cycle[i].temps);
