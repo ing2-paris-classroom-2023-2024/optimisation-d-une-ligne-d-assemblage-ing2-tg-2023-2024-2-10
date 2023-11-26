@@ -6,6 +6,7 @@
 #include "Exclusion.h"
 #include "Operations.h"
 #include "Graphe.h"
+#include "Precedences.h"
 
 int main() {
 
@@ -21,6 +22,9 @@ int main() {
     for(int i = 0; i<31; i++){
         printf("Couleur de %d: %d\n", ops[i].num_operation, couleur[i]);
     }
+
+    t_precedence* prs = lirefichier_pr();
+    afficher_pr(prs, 34);
 
     return 0;
 }
