@@ -26,5 +26,8 @@ int main() {
     t_precedence* prs = lirefichier_pr();
     afficher_pr(prs, 34);
 
+    t_temps_cycle * t = lirefichier_tmps();
+    afficher_tmps(t, 1);
+
     return 0;
 }
