@@ -1,7 +1,8 @@
 //
 // Created by Ambrine on 26/11/2023.
 //
-
+#include <stdio.h>
+#include <stdlib.h>
 #include "Precedences.h"
 #define MAX_PRECEDENCE 100
 
