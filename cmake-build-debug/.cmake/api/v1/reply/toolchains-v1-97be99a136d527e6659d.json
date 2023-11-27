@@ -1,0 +1,51 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/Ranya/ING 1/algorithmique et programmation structur\u00dae/mingw/lib/gcc/mingw32/6.3.0/include",
+						"D:/Ranya/ING 1/algorithmique et programmation structur\u00dae/mingw/include",
+						"D:/Ranya/ING 1/algorithmique et programmation structur\u00dae/mingw/lib/gcc/mingw32/6.3.0/include-fixed",
+						"D:/Ranya/ING 1/algorithmique et programmation structur\u00dae/mingw/mingw32/include"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "D:/Ranya/ING 1/Algorithmique et programmation structur\u00e9e/MinGW/bin/gcc.exe",
+				"version" : "6.3.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "D:/Ranya/ING 1/Algorithmique et programmation structur\u00e9e/MinGW/bin/windres.exe"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

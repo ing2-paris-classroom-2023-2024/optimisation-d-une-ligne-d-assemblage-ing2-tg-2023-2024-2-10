@@ -1,0 +1,4 @@
+ToolSet: 5.0 (local)@D:\Ranya\ING 1\Algorithmique et programmation structurée\MinGW
+Options: 
+
+Options:-DCMAKE_MAKE_PROGRAM=C:/Users/Ranya STITOU/AppData/Local/JetBrains/CLion 2022.2.1/bin/ninja/win/ninja.exe
