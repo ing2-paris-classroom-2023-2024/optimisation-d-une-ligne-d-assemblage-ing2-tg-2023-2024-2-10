@@ -1,7 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="optimisation_d_une_ligne_d_assemblage_ing2_tg_2023_2024_2_10" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="optimisation_d_une_ligne_d_assemblage_ing2_tg_2023_2024_2_10" TARGET_NAME="optimisation_d_une_ligne_d_assemblage_ing2_tg_2023_2024_2_10" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="optimisation_d_une_ligne_d_assemblage_ing2_tg_2023_2024_2_10" RUN_TARGET_NAME="optimisation_d_une_ligne_d_assemblage_ing2_tg_2023_2024_2_10">
-    <method v="2">
-      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-    </method>
-  </configuration>
-</component>
