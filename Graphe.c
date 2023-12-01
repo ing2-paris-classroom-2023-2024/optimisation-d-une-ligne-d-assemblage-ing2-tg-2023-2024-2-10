@@ -3,14 +3,11 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include "Graphe.h"
+#include "Header.h"
 
 
-
-t_graphe * initialisation_graphe(t_operation * ops, t_exclusion * exc){
+t_graphe * initialisation_graphe(t_operation * ops, t_exclusion * exc, int nombre_operation, int nombre_exclusion){
     //int nombre_operation = sizeof (ops) / sizeof ()
-    int nombre_operation = 31;
-    int nombre_exclusion = 20;
 
     t_graphe * g = (t_graphe *) malloc(sizeof (t_graphe));
 
@@ -28,7 +25,6 @@ t_graphe * initialisation_graphe(t_operation * ops, t_exclusion * exc){
         g->matrice_ad[index_op2][index_op1] = 1;
 
     }
-
 
     return g;
 }
@@ -66,4 +62,32 @@ int * coloration_graphe(t_graphe * g){
         couleur[i] = couleur_affectee;
     }
     return couleur;
+}
+
+t_graphe * init_graphe_bis(t_operation * ops, t_exclusion * exc, t_precedence * prs, int nombre_operation, int nombre_exclusion, int nombre_precedence){
+
+    t_graphe * g = (t_graphe *) malloc(sizeof (t_graphe));
+
+
+    for(int i = 0; i<nombre_operation; i++){
+        for(int j=0; j<nombre_operation; j++){
+            g->matrice_ad[i][j] = 0; //pas d'opération initialement dans le graphe
+        }
+    }
+
+    for(int i = 0; i<nombre_exclusion; i++){ //contrainte d'exclusion qui correspond aux relations bi-directionnel de notre graphe
+        int index_op1 = get_index(ops, exc[i].op1);
+        int index_op2 = get_index(ops, exc[i].op2);
+        g->matrice_ad[index_op1][index_op2] = 1;
+        g->matrice_ad[index_op2][index_op1] = 1;
+    }
+
+    for(int i = 0; i<nombre_precedence; i++){//contrainte de précédence qui correspond aux relations uni-directionnel de notre graphe
+        int index_op1 = get_index(ops, prs[i].sommet_d);
+        int index_op2 = get_index(ops, prs[i].sommet_f);
+        g->matrice_ad[index_op1][index_op2] = 1;
+
+    }
+
+    return g;
 }
