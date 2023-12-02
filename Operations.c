@@ -4,27 +4,27 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "Operations.h"
+#include "Header.h"
 #define MAX_OPERATION 100
 
 
-t_operation* lirefichier_op(){
+t_operation* lirefichier_op(int * nombre_obs){
 
-    FILE* fichier = fopen("operations.txt", "r");
+    FILE* fichier = fopen("../operations.txt", "r");
     if (!fichier)
     {
-        printf("Erreur de lecture fichier\n");
+        printf("Erreur de lecture fichier: operations\n");
         exit(-1);
     }
-    int i = 0;
+    * nombre_obs = 0;
 
     //tableau qui contient les informations d'une opération. cette table contient le numéro de l'opération,
     // le temps de l'opération et la couleur
     t_operation * operations = (t_operation*) malloc(sizeof (t_operation) * MAX_OPERATION);
 
     //EOF : End of File
-    while (fscanf(fichier, "%d%f", &operations[i].num_operation, &operations[i].temps_operation) != EOF){
-        i++;
+    while (fscanf(fichier, "%d%f", &operations[* nombre_obs].num_operation, &operations[* nombre_obs].temps_operation) != EOF){
+        (* nombre_obs)++;
     }
     return operations;
 }
