@@ -2,15 +2,17 @@
 // Created by mrtnw on 26/11/2023.
 //
 
-#include "Temps_de_cycle.h"
+#include "Header.h"
+#include <stdlib.h>
+#include <stdio.h>
 #define MAX_TEMPS 100
 
 t_temps_cycle* lirefichier_tmps(){
 
-    FILE* fichier = fopen("temps_cycle.txt", "r");
+    FILE* fichier = fopen("../temps_cycle.txt", "r");
     if (!fichier)
     {
-        printf("Erreur de lecture fichier\n");
+        printf("Erreur de lecture fichier: temps\n");
         exit(-1);
     }
     int i = 0;
