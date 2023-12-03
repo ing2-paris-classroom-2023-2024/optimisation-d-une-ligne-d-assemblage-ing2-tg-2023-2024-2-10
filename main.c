@@ -40,9 +40,45 @@ int main() {
         printf("la valeur numero %d du graphe est : %d\n", ops[i].num_operation, ops[tri_topo[i]].num_operation);
     }
 
+    t_graphe * g3 = init_graphe_bis(ops, exc, prs, nombre_op, nombre_ex, nombre_prs);
+    int * couleur_ex = coloration_g_ex(g3, tri_topo);
+    for (int i = 1; i <nombre_op ; i++) {
+        printf("Coloration sommet %d est: %d\n", ops[i].num_operation, couleur_ex[i]);
+    }
 
+    afficher_stations(g,ops,couleur,nombre_op);
+    printf("\n\n");
+    afficher_stations(g3, ops, couleur_ex, nombre_op);
 
 
     return 0;
 }
 
+void afficher_stations(t_graphe * g, t_operation * ops, int * couleur, int nombre_operation){
+    int couleur_max = couleur[0];
+
+    for (int i = 1; i <nombre_operation ; i++) {
+        if(couleur[i] > couleur_max){
+            couleur_max = couleur[i];
+        }
+    }
+    for (int i = 0; i <= couleur_max; i++) {
+        int n_b = 0; //nombre op
+        float t = 0; //temps
+        for (int j = 0; j < nombre_operation; ++j) {
+            if(couleur[j] == i){
+                n_b ++;
+                t = t + ops[j].temps_operation;
+            }
+        }
+        printf("--------------------------------\n");
+        printf("STATION : %d     NB_OP : %d       Temps : %f  \n", (i+1), n_b, t);
+
+        for (int j = 0; j < nombre_operation; ++j) {
+            if(couleur[j] == i){
+                printf("%d \t", ops[j].num_operation);
+            }
+        }
+        printf("\n--------------------------------\n\n");
+    }
+}

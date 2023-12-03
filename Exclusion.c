@@ -35,7 +35,8 @@ void afficher_ex(t_exclusion * exc, int num_e){
     }
 }
 
-int *coloration_g_ex(t_graphe * g, t_exclusion * exc, int * ordre){
+//int *coloration_g_ex(t_graphe * g, t_exclusion * exc, int * ordre){
+int *coloration_g_ex(t_graphe * g, int * ordre){
     int nombre_operation = 31;
     int nombre_exclusion = 20;
     int couleur_affectee;

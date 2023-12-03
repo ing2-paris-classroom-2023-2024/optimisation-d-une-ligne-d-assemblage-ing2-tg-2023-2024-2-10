@@ -37,26 +37,34 @@ typedef struct operation{
     int couleur;
 }t_operation;
 
+//Precedence
 t_precedence* lirefichier_pr(int * nombre_prs);
 void afficher_pr(t_precedence * prs, int num);
 t_graphe * init_graphe(t_operation * ops, t_precedence* prs, int nombre_op, int nombre_prs);
 int * tri_topologique (t_graphe* g, int * pile_index);
 void tri_topologique_dfs (int o, t_graphe * g, int * visite, int * pile, int * pile_index);
 
+//Graphe
 t_graphe * initialisation_graphe(t_operation * ops, t_exclusion *exc, int nombre_operation, int nombre_exclusion);
 t_graphe * init_graphe_bis(t_operation * ops, t_exclusion *exc, t_precedence * prs, int nombre_operation, int nombre_exclusion, int nombre_precedence);
 int * coloration_graphe(t_graphe * g);
 
+//temps cycle
 t_temps_cycle * lirefichier_tmps();
 void afficher_tmps(t_temps_cycle * temps_cycle, int num);
 
+//Exclusion
 t_exclusion * lirefichier_ex(int * nombre_ex);
 void afficher_ex(t_exclusion * exc, int num_e);
 //int *coloration_g_ex(t_exclusion * g, t_exclusion * exc, int * ordre);
-int *coloration_g_ex(t_graphe * g, t_exclusion * exc, int * ordre);
+int *coloration_g_ex(t_graphe * g, int * ordre);
 
+//Operation
 t_operation* lirefichier_op(int * nombre_obs);
 void afficher_op(t_operation * ops, int num);
 int get_index(t_operation* ops, int num);
+
+//Afficher Station
+void afficher_stations(t_graphe * g, t_operation * ops, int * couleur, int nombre_operation);
 
 #endif //OPTIMISATION_D_UNE_LIGNE_D_ASSEMBLAGE_ING2_TG_2023_2024_2_10_HEADER_H
