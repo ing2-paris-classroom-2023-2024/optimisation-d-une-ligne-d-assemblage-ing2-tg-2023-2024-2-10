@@ -52,8 +52,7 @@ t_graphe * init_graphe(t_operation * ops, t_precedence* prs, int nombre_op, int 
     return g;
 }
 
-int * tri_topologique (t_graphe* g, int * pile_index){
-    int nombre_operation = 31;
+int * tri_topologique (t_graphe* g, int * pile_index, int * ordre, int nombre_operation){
     int * pile = (int*) malloc(sizeof (int) * nombre_operation);
     int * visite = (int*) malloc(sizeof (int) * nombre_operation);
     *pile_index = 0;
@@ -62,9 +61,9 @@ int * tri_topologique (t_graphe* g, int * pile_index){
         visite[i] = 0;
     }
 
-    for (int i = 0; i < nombre_operation; ++i) {
-        if(visite[i] == 0){
-            tri_topologique_dfs(i, g, visite, pile, pile_index); //renvoie au dfs lorsque le somment n'a jamais été
+    for (int i = 0; i < nombre_operation; i++) {
+        if(visite[i] == 0 && ordre[i] == 0){
+            tri_topologique_dfs(i, g, visite, pile, pile_index, nombre_operation, 0); //renvoie au dfs lorsque le somment n'a jamais été
             //visité
         }
     }
@@ -72,15 +71,15 @@ int * tri_topologique (t_graphe* g, int * pile_index){
     return pile;
 }
 
-void tri_topologique_dfs (int o, t_graphe * g, int * visite, int * pile, int * pile_index){
+void tri_topologique_dfs (int o, t_graphe * g, int * visite, int * pile, int * pile_index, int nombre_operations, int profondeur){
     //o ==> sommet de départ du dfs
-    visite[o] = 1;
-    int nombre_operations = 31;
+    visite[o] = profondeur;
     for(int i = 0; i<nombre_operations; i++){
         if(g->matrice_ad[o][i] != 0 && visite[i] == 0){ //[o][i] : on cherche s'il existe une relation entre le sommet o et un autre sommet du graphe
-            tri_topologique_dfs(i, g, visite, pile, pile_index);
+            tri_topologique_dfs(i, g, visite, pile, pile_index, nombre_operations, profondeur+1);
         }
     }
-    *pile_index = *pile_index + 1;
-    pile[*pile_index]= o;
+
+    //*pile_index = *pile_index + 1;
+    pile[o]= profondeur;
 }
