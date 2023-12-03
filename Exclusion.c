@@ -35,7 +35,7 @@ void afficher_ex(t_exclusion * exc, int num_e){
     }
 }
 
-int *coloration_g_ex(t_graphe * g, t_exclusion * exc, int * ordre){
+int *coloration_g_ex(t_graphe * g, int * ordre){
     int nombre_operation = 31;
     int nombre_exclusion = 20;
     int couleur_affectee;
@@ -45,7 +45,7 @@ int *coloration_g_ex(t_graphe * g, t_exclusion * exc, int * ordre){
         couleur[i]= -1;
     }
 
-    couleur[ordre[0]] = 0;//initialisation du premier noeud avec couleur 0
+    couleur[ordre[1]] = 0;//initialisation du premier noeud avec couleur 0
     int * couleur_valable = (int*) malloc(sizeof (int) * nombre_operation);
 
     for(int i = 1; i<nombre_operation; i++){
@@ -69,5 +69,5 @@ int *coloration_g_ex(t_graphe * g, t_exclusion * exc, int * ordre){
         }
         couleur[i] = couleur_affectee;
     }
-
+    return couleur;
 }

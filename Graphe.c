@@ -91,3 +91,18 @@ t_graphe * init_graphe_bis(t_operation * ops, t_exclusion * exc, t_precedence * 
 
     return g;
 }
+
+int * ordre_graphe(t_graphe * g, int nombre_operation){
+    int ordre;
+    int * ordre_g = (int *) malloc(sizeof (int) * nombre_operation);
+    for (int i = 0; i < nombre_operation; i++) {
+        ordre = 0;
+        for (int j = 0; j < nombre_operation; j++) {
+            if(g->matrice_ad[j][i] != 0){
+                ordre++;
+            }
+        }
+        ordre_g[i] = ordre;
+    }
+    return ordre_g;
+}
