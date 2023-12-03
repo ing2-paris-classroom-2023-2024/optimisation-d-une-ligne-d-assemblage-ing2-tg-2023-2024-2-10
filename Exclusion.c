@@ -45,7 +45,7 @@ int *coloration_g_ex(t_graphe * g, int * ordre){
         couleur[i]= -1;
     }
 
-    couleur[ordre[1]] = 0;//initialisation du premier noeud avec couleur 0
+    couleur[ordre[1]] = 0;//initialisation du premier noeud avec la couleur 0
     int * couleur_valable = (int*) malloc(sizeof (int) * nombre_operation);
 
     for(int i = 1; i<nombre_operation; i++){

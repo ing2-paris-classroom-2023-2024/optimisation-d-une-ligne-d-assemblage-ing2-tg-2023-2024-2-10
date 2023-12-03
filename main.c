@@ -56,7 +56,7 @@ int main() {
     int * ordre_temps = ordonencement_temps(t, nombre_op, ops);
 
     //Troisième Graphe
-    //Coloration de ce graphe (contrainte d'exclusion)
+    //Coloration de ce graphe (avec la contrainte d'exclusion)
     t_graphe * g3 = init_graphe_bis(ops, exc, prs, nombre_op, nombre_ex, nombre_prs);
     int * couleur_ex = coloration_g_ex(g3, tri_topo);
 
